@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
 @RestController
@@ -44,7 +43,7 @@ public class ItemController {
     @PostMapping("/add")
     public void save(  @RequestParam(name="name", required = true) String name,
                        @RequestParam(name="description", required = true) String description,
-                       @RequestParam(name="date", required = true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) throws IOException
+                       @RequestParam(name="date", required = true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date)
     {
         ItemDto itemDto = new ItemDto(name, description, date);
         itemService.save(new Item(itemDto));
