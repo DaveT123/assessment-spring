@@ -1,14 +1,14 @@
 package org.generation.SpringAssessment.controller.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ItemDto {
 
     private String name;
     private String description;
-    private Date date;
+    private LocalDate date;
 
-    public ItemDto(String name, String description, Date date) {
+    public ItemDto(String name, String description, LocalDate date) {
 
         this.name = name;
         this.description = description;
@@ -32,11 +32,11 @@ public class ItemDto {
         this.description = description;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

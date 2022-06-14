@@ -4,7 +4,7 @@ import org.generation.SpringAssessment.controller.dto.ItemDto;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "todoitem")
@@ -15,7 +15,7 @@ public class Item {
     private Integer id;
     private String name;
     private String description;
-    private Date date;
+    private LocalDate date;
 
     public Item() {};
 
@@ -49,12 +49,11 @@ public class Item {
         this.description = description;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
